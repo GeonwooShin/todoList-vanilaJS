@@ -6,13 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo-List</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="./main.js" defer></script>
+  <script src="./src/greeting.js" defer></script>
+  <script src="./src/clock.js" defer></script>
+  <script src="./src/quotes.js" defer></script>
+  <script src="./src/background.js" defer></script>
+  <script src="./src/todo.js" defer></script>
+  <script src="./src/weather.js" defer></script>
 </head>
 <body>
+  <!-- Clock -->
+  <div class="clock">
+    <span class="clock__date"></span>
+    <span class="clock__time"></span>
+  </div>
+
+  <!-- Greeting -->
   <h1 class="greeting hide"></h1>
   <form class="name__form hide">
     <input placeholder="이름을 입력해주세요." minlength="2" maxlength="15" class="name__form-input" type="text" required>
     <button class="name__form-button">Enter</button>
   </form>
+
+  <!-- Todo -->
+  <form class="todo__form">
+    <input placeholder="할 일을 입력해주세요." type="text" class="todo__form-input" required>
+  </form>
+  <ul class="todo-list"></ul>
+
+  <!-- Quote -->
+  <footer>
+    <div class="quote">
+      <span class="quote__author"></span>
+      <span class="quote__content"></span>
+    </div>
+  </footer>
 </body>
 </html>
