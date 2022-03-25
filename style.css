@@ -9,16 +9,13 @@
   --font-medium: 50px;
   --font-small: 32px;
   --font-xsmall: 16px;
+  --font-deleteBtn: 18px;
 
   /* Font-weight */
   --weight-thin: 100;
   --weight-regular: 500;
   --weight-semibold: 700;
   --weight-bold: 900;
-  
-  
-
-
 }
 
 .hide {
@@ -27,7 +24,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -60,6 +57,15 @@ button {
   background-color: transparent;
   color: var(--color-white);
   cursor: pointer;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  /* padding-left: 0; */
 }
 
 /* Clock */
@@ -115,4 +121,38 @@ button {
 
 .todo__form-input {
   font-size: var(--font-xsmall);
+}
+
+.todo-list {
+  width: 700px;
+  min-height: 0px;
+  max-height: 400px;
+  margin: auto;
+  margin-top: 30px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  column-gap: 20px;
+  row-gap: 10px;
+  overflow-y: scroll;
+}
+
+.todo-list-item {
+  width: 250px;
+  height: 100px;
+  padding: 30px;
+  position: relative;
+  border: 1px solid var(--color-white);
+  border-radius: 8px;
+}
+
+.todo-content {
+  text-align: center;
+}
+
+.todo-list-item button {
+ position: absolute;
+ top: 15px;
+ right: 15px;
+ font-size: var(--font-deleteBtn);
 }

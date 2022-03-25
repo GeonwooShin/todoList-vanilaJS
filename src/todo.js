@@ -1,4 +1,4 @@
-import { savedName } from "./greeting.js"
+export { todoForm };
 
 const todoForm = document.querySelector('.todo__form')
 const todoInput = document.querySelector('.todo__form-input')
@@ -7,10 +7,6 @@ const todoList = document.querySelector('.todo-list')
 const TODOS_KEY = "todos"
 
 let todos = []
-
-if(savedName) {
-  todoForm.classList.remove('hide')
-}
 
 const savedTodos = localStorage.getItem(TODOS_KEY)
 
