@@ -1,3 +1,10 @@
+const city = document.querySelector('.weather__city')
+const minTempSpan = document.querySelector('.minTemp')
+const maxTempSpan = document.querySelector('.maxTemp')
+const feelTempSpan = document.querySelector('.feelTemp')
+const currentTempSpan = document.querySelector('.currentTemp')
+const descriptionSpan = document.querySelector('.weather__description')
+
 const WEATHER_API_KEY = '591d0ddd3cb032a6e7bef7869984f068'
 
 function getGeoSuccess(loc) {
@@ -9,12 +16,18 @@ function getGeoSuccess(loc) {
   .then(res => res.json())
   .then(data => {
     const pos = data.name
-    const minTemp = data.main[0].temp_min
-    const maxTemp = data.main[0].temp_max
-    const feelTemp = data.main[0].feels_like
-    const currentTemp = data.main[0].temp
+    const minTemp = Math.round(data.main.temp_min)
+    const maxTemp = Math.round(data.main.temp_max)
+    const feelTemp = Math.round(data.main.feels_like)
+    const currentTemp = Math.round(data.main.temp)
     const description = data.weather[0].description
-    
+    console.log(pos, minTemp, maxTemp, feelTemp, currentTemp, description)
+    city.innerText = `${pos}`
+    minTempSpan.innerText = `${minTemp}°C`
+    maxTempSpan.innerText = `${maxTemp}°C`
+    feelTempSpan.innerText = `${feelTemp}°C`
+    currentTempSpan.innerText = `${currentTemp}°C`
+    descriptionSpan.innerText = `${description}`
   })
 }
 

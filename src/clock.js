@@ -1,5 +1,6 @@
 const clockDate = document.querySelector('.clock__date')
-const clockTime = document.querySelector('.clock__time')
+const clockSession = document.querySelector('.time-session')
+const clockTime = document.querySelector('.time-time')
 
 function updateClock() {
   const date = new Date()
@@ -21,7 +22,8 @@ function updateClock() {
   const seconds = String(date.getSeconds()).padStart(2, "0")
   
   clockDate.innerText = `${year}년 ${month}월 ${day}일 ${dayOfWeek}요일`
-  clockTime.innerText = `${session} ${hours} : ${minutes} : ${seconds}`
+  clockSession.innerText =`${session}`
+  clockTime.innerText = `${hours}:${minutes}:${seconds}`
 }
 
 function initClock() {

@@ -4,7 +4,7 @@ const nameInputBtn = document.querySelector('.name__form-button')
 const greetingBox = document.querySelector('.greeting')
 
 const USERNAME = "username"
-const savedName = localStorage.getItem(USERNAME)
+export const savedName = localStorage.getItem(USERNAME)
 
 function paintGreeting(username) {
   greetingBox.innerText = `${username}님 환영합니다`

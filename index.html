@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo-List</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;500;700;900&display=swap" rel="stylesheet">
   <script src="./src/greeting.js" defer></script>
   <script src="./src/clock.js" defer></script>
   <script src="./src/quotes.js" defer></script>
@@ -17,19 +20,22 @@
   <!-- Clock -->
   <div class="clock">
     <span class="clock__date"></span>
-    <span class="clock__time"></span>
+    <div class="clock__time">
+      <span class="time-session"></span>
+      <span class="time-time"></span>
+    </div>
   </div>
 
   <!-- Greeting -->
   <h1 class="greeting hide"></h1>
   <form class="name__form hide">
-    <input placeholder="이름을 입력해주세요." minlength="2" maxlength="15" class="name__form-input" type="text" required>
+    <input placeholder="이름을 입력해주세요" minlength="2" maxlength="15" class="name__form-input" type="text" required>
     <button class="name__form-button">Enter</button>
   </form>
 
   <!-- Todo -->
-  <form class="todo__form">
-    <input placeholder="할 일을 입력해주세요." type="text" class="todo__form-input" required>
+  <form class="todo__form hide">
+    <input placeholder="할 일을 입력해주세요" type="text" class="todo__form-input" required>
   </form>
   <ul class="todo-list"></ul>
 
@@ -37,11 +43,23 @@
   <aside>
     <div class="weather">
       <span class="weather__city"></span>
-      <div class="temp">
-        <span class="weather__minTemp"></span>
-        <span class="weather__maxTemp"></span>
-        <span class="weather__feelTemp"></span>
-        <span class="weather__currentTemp"></span>
+      <div class="weather__temp">
+        <div class="minTempWrap">
+          <span>최고 기온</span>
+          <span class="minTemp"></span>
+        </div>
+        <div class="maxTempWrap">
+          <span>최저 기온</span>
+          <span class="maxTemp"></span>
+        </div>
+        <div class="feelTempWrap">
+          <span>체감 온도</span>
+          <span class="feelTemp"></span>
+        </div>
+        <div class="currentTempWrap">
+          <span>현재 기온</span>
+          <span class="currentTemp"></span>
+        </div>
       </div>
       <span class="weather__description"></span>
     </div>
