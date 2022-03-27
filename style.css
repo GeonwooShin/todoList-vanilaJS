@@ -9,13 +9,22 @@
   --font-medium: 50px;
   --font-small: 32px;
   --font-xsmall: 16px;
-  --font-deleteBtn: 18px;
+  --font-xxsmall: 14px;
+  --font-temp: 26px;
+  --font-deleteBtn: 24px;
+  --font-nextBtn: 32px;
 
   /* Font-weight */
   --weight-thin: 100;
   --weight-regular: 500;
   --weight-semibold: 700;
   --weight-bold: 900;
+}
+
+* {
+  margin: 0;
+	padding: 0px;
+	border: 0;
 }
 
 .hide {
@@ -65,7 +74,6 @@ ul {
 
 li {
   list-style: none;
-  /* padding-left: 0; */
 }
 
 /* Clock */
@@ -73,7 +81,7 @@ li {
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding-top: 150px;
+  padding: 0 30px;
 }
 
 .clock__date {
@@ -124,15 +132,15 @@ li {
 }
 
 .todo-list {
-  width: 700px;
+  width: 1200px;
   min-height: 0px;
-  max-height: 400px;
+  max-height: 170px;
   margin: auto;
   margin-top: 30px;
+  padding: 0 30px;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
-  column-gap: 20px;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
   row-gap: 10px;
   overflow-y: scroll;
 }
@@ -142,17 +150,189 @@ li {
   height: 100px;
   padding: 30px;
   position: relative;
-  border: 1px solid var(--color-white);
+  border: 4px solid var(--color-white);
   border-radius: 8px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  display: table;
 }
 
 .todo-content {
+  height: 100px;
   text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  word-break: break-all;
 }
 
 .todo-list-item button {
+  color: var(--color-black);
  position: absolute;
- top: 15px;
- right: 15px;
+ top: 0px;
+ right: 5px;
  font-size: var(--font-deleteBtn);
+ font-weight: var(--weight-semibold);
+}
+
+/* Weather */
+aside {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 30px;
+  padding-right: 50px;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--weight-thin);
+}
+
+.weather__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.weather__city {
+  padding-right: 20px;
+}
+
+.weather__img {
+  font-size: var(--font-medium);
+}
+
+.weather__temp {
+  display: flex;
+}
+
+.temp-wrap {
+  position: relative;
+}
+
+.temp {
+  padding-right: 20px;
+  font-size: var(--font-temp);
+}
+
+.temp-text {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+  font-size: var(--font-xxsmall);
+}
+
+/* Quote */
+footer {
+  padding: 50px;
+}
+
+.quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quote__author {
+  font-weight: var(--weight-thin);
+  padding-right: 10px;
+}
+
+.quote__author::after {
+  padding-left: 10px;
+  content: '|';
+}
+
+.quote__next-btn {
+  font-size: var(--font-nextBtn);
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+@media screen and (max-width: 1220px) {
+  :root {
+    /* Font-size */
+    --font-medium: 18px;
+    --font-small: 16px;
+    --font-xsmall: 12px;
+    --font-xxsmall: 10px;
+    --font-temp: 18px;
+    --font-deleteBtn: 24px;
+  
+    /* Font-weight */
+    --weight-thin: 100;
+    --weight-regular: 500;
+    --weight-semibold: 700;
+    --weight-bold: 900;
+  }
+  .todo-list {
+    width: 800px;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 876px) {
+  .todo-list {
+    padding: 0;
+    width: auto;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+
+  /* Greeting */
+  .greeting {
+    margin-bottom: 10px;
+  }
+
+  /* Weather */
+  aside {
+    display: flex;
+    justify-content: center;
+    padding-right: 0px;
+  }
+
+  .weather__description {
+    padding-bottom: 10px;
+  }
+
+  .weather__city {
+    padding-right: 20px;
+  }
+
+  .temp {
+    padding-right: 3px;
+  }
+
+  .temp::after {
+    content: '/';
+    padding: 12px;
+  }
+
+  .temp-text {
+    display: none;
+  }
+
+  /* Quote */
+  footer {
+    padding: 50px;
+  }
+
+  .quote {
+    flex-direction: column;
+  }
+
+  .quote__author {
+    padding-right: 0px;
+  }
+
+  .quote__author::after {
+    content: '';
+  }
+
+  .quote__next-btn {
+    padding-left: 0px;
+  }
 }

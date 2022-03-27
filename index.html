@@ -15,8 +15,33 @@
   <script src="./src/background.js" defer></script>
   <script type="module" src="./src/todo.js" defer></script>
   <script src="./src/weather.js" defer></script>
+  <script src="https://kit.fontawesome.com/71c1808d15.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Weather -->
+  <aside>
+    <div class="weather">
+      <div class="weather__description">
+        <span class="weather__city"></span>
+        <span class="weather__img"></span>
+      </div>
+      <div class="weather__temp">
+        <div class="temp-wrap">
+          <span class="temp-text">최고</span>
+          <span class="temp maxTemp"></span>
+        </div>
+        <div class="temp-wrap">
+          <span class="temp-text">최저</span>
+          <span class="temp minTemp"></span>
+        </div>
+        <div class="temp-wrap">
+          <span class="temp-text">현재</span>
+          <span class="temp currentTemp"></span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
   <!-- Clock -->
   <div class="clock">
     <span class="clock__date"></span>
@@ -39,37 +64,14 @@
   </form>
   <ul class="todo-list"></ul>
 
-  <!-- Weather -->
-  <aside>
-    <div class="weather">
-      <span class="weather__city"></span>
-      <div class="weather__temp">
-        <div class="minTempWrap">
-          <span>최고 기온</span>
-          <span class="minTemp"></span>
-        </div>
-        <div class="maxTempWrap">
-          <span>최저 기온</span>
-          <span class="maxTemp"></span>
-        </div>
-        <div class="feelTempWrap">
-          <span>체감 온도</span>
-          <span class="feelTemp"></span>
-        </div>
-        <div class="currentTempWrap">
-          <span>현재 기온</span>
-          <span class="currentTemp"></span>
-        </div>
-      </div>
-      <span class="weather__description"></span>
-    </div>
-  </aside>
-
   <!-- Quote -->
   <footer>
     <div class="quote">
-      <span class="quote__author"></span>
+      <span class="quote__author">    </span>
       <span class="quote__content"></span>
+      <button class="quote__next-btn">
+        <i class="fa-solid fa-caret-right"></i>
+      </button>
     </div>
   </footer>
 </body>
