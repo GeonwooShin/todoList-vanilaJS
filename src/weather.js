@@ -56,6 +56,7 @@ function getGeoSuccess(loc) {
         break
       default:
         alert('Cannot load weather!')
+        break
     }
   })
 }
