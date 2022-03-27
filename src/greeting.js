@@ -1,5 +1,3 @@
-import { todoForm } from "./todo.js"
-
 const nameForm = document.querySelector('.name__form')
 const nameInput = document.querySelector('.name__form-input')
 const nameInputBtn = document.querySelector('.name__form-button')
