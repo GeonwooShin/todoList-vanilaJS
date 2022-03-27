@@ -3,7 +3,7 @@ const minTempSpan = document.querySelector('.minTemp')
 const maxTempSpan = document.querySelector('.maxTemp')
 const feelTempSpan = document.querySelector('.feelTemp')
 const currentTempSpan = document.querySelector('.currentTemp')
-const descriptionSpan = document.querySelector('.weather__description')
+const imgSpan = document.querySelector('.weather__img')
 
 const WEATHER_API_KEY = '591d0ddd3cb032a6e7bef7869984f068'
 
@@ -18,16 +18,45 @@ function getGeoSuccess(loc) {
     const pos = data.name
     const minTemp = Math.round(data.main.temp_min)
     const maxTemp = Math.round(data.main.temp_max)
-    const feelTemp = Math.round(data.main.feels_like)
     const currentTemp = Math.round(data.main.temp)
     const description = data.weather[0].description
-    console.log(pos, minTemp, maxTemp, feelTemp, currentTemp, description)
+    console.log(pos, minTemp, maxTemp, currentTemp, description)
     city.innerText = `${pos}`
     minTempSpan.innerText = `${minTemp}°C`
     maxTempSpan.innerText = `${maxTemp}°C`
-    feelTempSpan.innerText = `${feelTemp}°C`
     currentTempSpan.innerText = `${currentTemp}°C`
-    descriptionSpan.innerText = `${description}`
+    
+    switch(description) {
+      case 'clear sky':
+        imgSpan.innerHTML = `<i class="fa-solid fa-sun"></i>`
+        break
+      case 'few clouds':
+        imgSpan.innerHTML = `<i class="fa-solid fa-cloud-sun"></i>`
+        break
+      case 'scattered clouds':
+        imgSpan.innerHTML = `<i class="fa-solid fa-cloud"></i>`
+        break
+      case 'broken clouds':
+        imgSpan.innerHTML = `<i class="fa-solid fa-clouds"></i>`
+        break
+      case 'shower rain':
+        imgSpan.innerHTML = `<i class="fa-solid fa-cloud-showers"></i>`
+        break
+      case 'rain':
+        imgSpan.innerHTML = `<i class="fa-solid fa-cloud-rain"></i>`
+        break
+      case 'thunderstorm':
+        imgSpan.innerHTML = `<i class="fa-solid fa-cloud-bolt"></i>`
+        break
+      case 'snow':
+        imgSpan.innerHTML = `<i class="fa-solid fa-snowflake"></i>`
+        break
+      case 'mist':
+        imgSpan.innerHTML = `<i class="fa-solid fa-cloud-fog"></i>`
+        break
+      default:
+        alert('Cannot load weather!')
+    }
   })
 }
 
