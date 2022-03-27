@@ -1,11 +1,11 @@
+import { WEATHER_API_KEY } from "./api.js"
+
 const city = document.querySelector('.weather__city')
 const minTempSpan = document.querySelector('.minTemp')
 const maxTempSpan = document.querySelector('.maxTemp')
 const feelTempSpan = document.querySelector('.feelTemp')
 const currentTempSpan = document.querySelector('.currentTemp')
 const imgSpan = document.querySelector('.weather__img')
-
-const WEATHER_API_KEY = '591d0ddd3cb032a6e7bef7869984f068'
 
 function getGeoSuccess(loc) {
   const lat = loc.coords.latitude
